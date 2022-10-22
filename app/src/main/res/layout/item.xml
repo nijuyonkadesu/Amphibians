@@ -7,18 +7,34 @@
         <variable
             name="amphibian"
             type="com.njk.amphibians.network.Amphibian" />
+        <variable
+            name="clickListener"
+            type="com.njk.amphibians.AmphibianListener" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:onClick="@{() -> clickListener.onClick(amphibian)}"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="4dp">
 
         <TextView
-            android:id="@+id/amphibianItem"
-            android:layout_width="match_parent"
+            android:id="@+id/amphibian_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textSize="18sp"
+            android:text="@{amphibian.name}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="5 lines of js in kt" />
+
+    </com.google.android.material.card.MaterialCardView>
 </layout>
 <!--TODO need custom binders-->
