@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.njk.amphibians.databinding.FragmentAmphibiansBinding
+import com.njk.amphibians.model.AmphibianViewModel
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
+
 class AmphibianListFragment : Fragment() {
 
     private var _binding: FragmentAmphibiansBinding? = null
@@ -17,11 +17,12 @@ class AmphibianListFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val sharedViewModel: AmphibianViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentAmphibiansBinding.inflate(inflater, container, false)
         return binding.root
@@ -30,7 +31,11 @@ class AmphibianListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // TODO More Details
+        _binding?.apply {
+            viewModel = sharedViewModel
+            lifecycleOwner = viewLifecycleOwner // make UI observable
+            TODO("Set Recycler View Adapter")
+        }
     }
 
     override fun onDestroyView() {

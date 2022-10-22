@@ -17,3 +17,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+<!--
+    This file is being included by activity_main.xml
+
+    content_main.xml has NavHostFragment
+    activity_main.xml has AppBar
+
+    fragment_amphibians recycler view of Amphibians
+-->

@@ -25,6 +25,7 @@ class AmphibianViewModel: ViewModel() {
             _status.value = AmphibianApiStatus.LOADING
             try {
                 _amphibians.value = AmphibianApi.retrofitService.getAmphibian()
+                _status.value = AmphibianApiStatus.DONE
             } catch (e: Exception) {
                 _status.value = AmphibianApiStatus.ERROR
                 _amphibians.value = listOf()
