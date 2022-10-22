@@ -10,7 +10,7 @@ import com.njk.amphibians.databinding.FragmentAmphibiansBinding
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class AmphibiansFragment : Fragment() {
+class AmphibianListFragment : Fragment() {
 
     private var _binding: FragmentAmphibiansBinding? = null
 

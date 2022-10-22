@@ -20,9 +20,9 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URl)
     .build()
 
-// 4. Interface on how to communicate with API service
+// 4. Interface on how to communicate with API service, defines the endpoint
 interface ApiService {
-    @GET("amphibians")
+    @GET("android-basics-kotlin-unit-4-pathway-2-project-api.json")
     suspend fun getAmphibian(): List<Amphibian>
 }
 
