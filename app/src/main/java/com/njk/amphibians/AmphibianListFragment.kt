@@ -22,7 +22,7 @@ class AmphibianListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
 
         _binding = FragmentAmphibiansBinding.inflate(inflater, container, false)
         return binding.root
@@ -34,7 +34,10 @@ class AmphibianListFragment : Fragment() {
         _binding?.apply {
             viewModel = sharedViewModel
             lifecycleOwner = viewLifecycleOwner // make UI observable
-            TODO("Set Recycler View Adapter")
+            recyclerView.adapter = AmphibianListAdapter(AmphibianListener { amphibian ->
+                sharedViewModel.onAmphibianClicked(amphibian)
+                // TODO Set Navigation to next fragment
+            })
         }
     }
 

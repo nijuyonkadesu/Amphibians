@@ -28,7 +28,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
             android:textSize="18sp"
             android:text="@{amphibian.name}"
             app:layout_constraintStart_toStartOf="parent"

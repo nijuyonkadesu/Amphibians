@@ -35,4 +35,7 @@ class AmphibianViewModel: ViewModel() {
     fun onAmphibianClicked(amphibian: Amphibian) {
         _amphibian.value = amphibian
     }
+    init {
+        getAmphibianList()
+    }
 }

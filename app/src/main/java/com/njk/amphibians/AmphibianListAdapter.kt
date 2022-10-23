@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.njk.amphibians.databinding.ItemBinding
 import com.njk.amphibians.network.Amphibian
 
-class AmphibianListAdapter(val clickListener: AmphibianListener):
+class AmphibianListAdapter(private val clickListener: AmphibianListener):
     ListAdapter<Amphibian, AmphibianListAdapter.AmphibianViewHolder>(DiffCallback) {
 
     class AmphibianViewHolder(
