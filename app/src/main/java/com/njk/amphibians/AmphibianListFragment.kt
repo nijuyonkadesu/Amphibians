@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.njk.amphibians.databinding.FragmentAmphibiansBinding
 import com.njk.amphibians.model.AmphibianViewModel
 
@@ -36,7 +37,7 @@ class AmphibianListFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner // make UI observable
             recyclerView.adapter = AmphibianListAdapter(AmphibianListener { amphibian ->
                 sharedViewModel.onAmphibianClicked(amphibian)
-                // TODO Set Navigation to next fragment
+                findNavController().navigate(R.id.action_AmphibiansFragment_to_amphibianDetailFragment)
             })
         }
     }
